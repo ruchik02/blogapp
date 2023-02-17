@@ -4,7 +4,6 @@ import Body from 'components/Body'
 import Post from 'components/Post'
 import Footer from 'components/Footer'
 import Navbar from 'components/Navbar'
-
 const index = () => {
   return (
     <div>

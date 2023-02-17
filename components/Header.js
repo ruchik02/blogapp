@@ -19,13 +19,13 @@ export const Header = () => {
         </span>
         {/* Links  */}
         <ul
-          className="border-2 border-b-purple-600 sm:border-0 sm:flex sm:items-center sm:pb-0 pb-2 absolute sm:static bg-white sm:z-auto z-[-1] left-0 w-full sm:w-auto sm:pl-0 pl-9 transition-all duration-300 ease-in "
+          className="border-2 border-b-blue-500 sm:border-0 sm:flex sm:items-center sm:pb-0 pb-2 absolute sm:static bg-white sm:z-auto z-[-1] left-0 w-full sm:w-auto sm:pl-0 pl-9 transition-all duration-300 ease-in "
         >
           <Link href="/login" >
-            <li className="my-4 px-2 hover:text-purple-600">Log in</li>
+            <li className="my-4 px-2 hover:text-blue-500">Log in</li>
           </Link>
           <Link href="/signup" >
-            <li className="my-4 px-2 hover:text-purple-600">Sign up</li>
+            <li className="my-4 px-2 hover:text-blue-500">Sign up</li>
           </Link>
         </ul>
       </div>
