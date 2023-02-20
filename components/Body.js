@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 const Body = () => {
   return (
     <header className="w-full container mx-auto">

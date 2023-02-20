@@ -2,17 +2,20 @@ import React from 'react'
 import { useState } from 'react';
 import Link from 'next/link'
 import Blog from 'components/Blog'
+import { useRouter } from 'next/router';
 import { useSession,signIn} from 'next-auth/react'
 const Login = () => {
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const{data:session}=useSession();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      await loginUser({ variables: { email, password } });
-    } catch (error) {
-      console.error(error);
+    try{
+      await loginUser({variables:{email,password}});
+      router.push('/main');
+    }catch(error){
+      console.log(error);
     }
   };
 
@@ -67,7 +70,7 @@ const Login = () => {
                 type="submit"
                 className="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-blue-500 rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring-blue-200 focus:ring-4"
               >
-               Sign In
+              Sign In
               </button>
             </div>
             <div className="flex flex-col space-y-5">

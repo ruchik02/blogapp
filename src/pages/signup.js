@@ -13,7 +13,6 @@ const signup = () => {
   const router = useRouter();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // const hashPassword=await argon.hash(password)
     try {
       await signup({ variables: { name, email, password } });
       router.push('/login');

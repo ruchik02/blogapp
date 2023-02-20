@@ -1,13 +1,19 @@
 import React from 'react'
 import Link from 'next/link'
-import { signOut } from 'next-auth/react'
+import { useRouter } from 'next/router'
+
 import BlogFooter from './BlogFooter'
+import BlogContent from './BlogContent'
 const Blog = () => {
+  const router=useRouter();
+  const handleLogout=(e)=>{
+    e.preventDefault();
+    router.push('/logout');
+  }
   return (
     <>
-
     <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
-    <div className="flex items-center flex-shrink-0 text-white mr-96">
+    <div className="flex items-center flex-shrink-0 text-white mr-[28rem]">
       <span className="font-semibold text-xl tracking-tight ml-3">MyBlogs</span>
     </div>
     <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
@@ -25,25 +31,26 @@ const Blog = () => {
         </Link>
         <Link href="/blog">
         <span  className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 hover:underline">
-          All-Blogs
+          Blogs
         </span>
         </Link> 
-        <Link href="/categories">
+        <Link href="/create">
         <span  className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 hover:underline">
-         Categories
+         Create
         </span>
         </Link> 
-        <Link href="/contact">
+        <Link href="/profile">
         <span  className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 hover:underline">
-        Contact
+        Profile
         </span>
         </Link> 
       </div>
       <div>
-        <button onClick={()=>signOut()}  className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Sign Out</button>
+        <button  onClick={handleLogout} className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Sign Out</button>
       </div>
     </div>
   </nav>
+  <BlogContent/>
   <BlogFooter/>
 </>
   )
