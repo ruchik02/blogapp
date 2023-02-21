@@ -8,3 +8,11 @@ export const ADD_USER=gql`
   }
 }
 `;
+export const ADD_BLOG=gql`
+mutation MyMutation($description: String , $title: String ) {
+  insert_blog_one(object: {description: $description, title: $title}) {
+    description
+    title
+  }
+}
+`

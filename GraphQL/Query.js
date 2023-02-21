@@ -10,3 +10,12 @@ export const GET_USER=gql`
     }
   }
 `;
+export const GET_BLOG=gql`
+query MyQuery {
+  blog(order_by: {id: asc}) {
+    description
+    id
+    title
+  }
+}
+`
